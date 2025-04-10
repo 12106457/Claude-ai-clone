@@ -74,7 +74,7 @@ const Sidebar = ({
 
   return (
     <aside
-      className={`flex flex-col h-screen bg-[#f5f4ed] border-r border-gray-200 transition-all duration-300 shadow-md
+      className={`flex flex-col h-screen bg-[#faf9f5] border-r border-gray-200 transition-all duration-300 shadow-md
         ${isOpen ? "w-72" : "w-16"} fixed top-0 left-0 z-40`}
     >
       {/* Toggle Button */}
@@ -222,31 +222,31 @@ const Sidebar = ({
     </div>
 
     <div className="flex-col gap-3 border-b border-gray-300">
-      <button className="block w-full py-2 text-left text-sm hover:bg-gray-100 rounded">Settings</button>
-      <button className="w-full py-2 text-left text-sm hover:bg-gray-100 flex justify-between items-center rounded">
+      <button className="block w-full py-2 text-left text-sm hover:bg-[#f0eee6] px-1 rounded">Settings</button>
+      <button className="w-full py-2 text-left text-sm hover:bg-[#f0eee6] px-1 flex justify-between items-center rounded">
         <span>View all plans</span>
         <span className="text-blue-400 bg-blue-50 px-1 rounded">New</span>
       </button>
-      <button className="w-full py-2 text-left text-sm hover:bg-gray-100 flex justify-between items-center rounded">
+      <button className="w-full py-2 text-left text-sm hover:bg-[#f0eee6] px-1 flex justify-between items-center rounded">
         <span>Language</span>
         <ChevronRight size={18} />
       </button>
-      <button className="block w-full py-2 text-left text-sm hover:bg-gray-100 rounded">Get help</button>
+      <button className="block w-full py-2 text-left text-sm hover:bg-[#f0eee6] px-1 rounded">Get help</button>
     </div>
 
     <div className="flex-col gap-3 border-b border-gray-300">
-      <button className="w-full py-2 text-left text-sm hover:bg-gray-100 flex justify-between items-center rounded">
+      <button className="w-full py-2 text-left text-sm hover:bg-[#f0eee6] px-1 flex justify-between items-center rounded">
         <span>Learn more</span>
         <ChevronRight size={18} />
       </button>
-      <button className="w-full py-2 text-left text-sm hover:bg-gray-100 flex justify-between items-center rounded">
+      <button className="w-full py-2 text-left text-sm hover:bg-[#f0eee6] px-1 flex justify-between items-center rounded">
         <span>Download Claude for Windows</span>
         <ExternalLink size={18} />
       </button>
     </div>
 
     <button
-      className="block w-full py-2 text-left text-sm hover:bg-gray-100 rounded"
+      className="block w-full py-2 text-left text-sm hover:bg-[#f0eee6] px-1 rounded"
       onClick={handleLogout}
     >
       Log out
