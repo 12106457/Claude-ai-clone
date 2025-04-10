@@ -9,7 +9,8 @@ import {
   ChevronDownIcon,
   Check,
   ChevronRight,
-  ExternalLink
+  ExternalLink,
+  Ellipsis
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -125,23 +126,38 @@ const Sidebar = ({
       <div className="flex-grow overflow-y-auto px-2 mt-2">
         {/* You can populate this space dynamically */}
         {isOpen ? (
-          <div className="ml-1 ">
-            <p className="text-sm ml-2 mb-2 mt-10">Recents</p>
-            {recentKey.map((key, index) => (
-              <div
-                key={index}
-                className="text-lg text-gray-700 rounded p-2 "
-                onClick={() => {
-                  SetSelectKey(key);
-                  setSelectedKeyFromSidebar(key);
-                }}
-                style={{ backgroundColor: selectKey === key ? "#e8e6dc" : "" }}
-                title={key}
-              >
-                {key}
-              </div>
-            ))}
-          </div>
+         <div className="ml-1">
+         <p className="text-sm ml-2 mb-2 mt-10">Recents</p>
+         {recentKey.map((key, index) => (
+           <div
+             key={index}
+             className={`group flex items-center justify-between mt-[2px] text-sm text-gray-700 rounded p-2 font-normal hover:bg-[#e8e6dc] transition-all duration-200 ${
+               selectKey === key ? "bg-[#e8e6dc]" : ""
+             }`}
+             onClick={() => {
+               SetSelectKey(key);
+               setSelectedKeyFromSidebar(key);
+             }}
+             title={key}
+           >
+             <span className="truncate max-w-[80%]">{key}</span>
+             
+             {/* Icon appears on hover or if selected */}
+             {(selectKey === key) || (
+               <span className="ml-2 hidden group-hover:flex flex-shrink-0 cursor-pointer">
+                 <Ellipsis size={16} />
+               </span>
+             )}
+       
+             {selectKey === key && (
+               <span className="ml-2 flex flex-shrink-0 cursor-pointer">
+                 <Ellipsis size={16} />
+               </span>
+             )}
+           </div>
+         ))}
+       </div>
+       
         ) : null}
       </div>
 

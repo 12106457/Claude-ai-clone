@@ -22,7 +22,7 @@ const ClaudeChat = ({
   const [historyKey, setHistoryKey] = useState("");
   const textareaRef = useRef(null);
   const bottomRef = useRef(null);
-  const dropdownRef=useRef();
+  const dropdownRef = useRef();
   const [plusButtonClick, setPlusButtonClick] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
   // Create or get latest history key on mount
@@ -43,10 +43,7 @@ const ClaudeChat = ({
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setPlusButtonClick(false);
       }
     }
@@ -233,7 +230,7 @@ const ClaudeChat = ({
 
       {/* Input */}
       <div
-        className={`sticky w-full bg-[#faf9f5] duration-300 ${
+        className={`fixed w-full bg-[#faf9f5] duration-300 ${
           messages.length === 0 ? "bottom-60" : "bottom-0"
         }`}
       >
@@ -267,19 +264,28 @@ const ClaudeChat = ({
                   {/* Dropdown Menu */}
                   {plusButtonClick && (
                     <div
-                    ref={dropdownRef}
+                      ref={dropdownRef}
                       className={`absolute ${
                         messages.length ? "bottom-12" : "bottom-12"
                       } left-40 -translate-x-1/2  mt-2 bg-white border rounded-lg shadow-lg w-80 z-40`}
                     >
-                      <button className=" w-full px-4 py-2 text-left text-sm hover:bg-gray-100  flex justify-start items-center gap-2" onClick={()=>setPlusButtonClick(false)}>
-                        <Paperclip size={18} color="gray"/> Upload a file
+                      <button
+                        className=" w-full px-4 py-2 text-left text-sm hover:bg-gray-100  flex justify-start items-center gap-2"
+                        onClick={() => setPlusButtonClick(false)}
+                      >
+                        <Paperclip size={18} color="gray" /> Upload a file
                       </button>
-                      <button className=" w-full px-4 py-2 text-left text-sm hover:bg-gray-100  flex justify-start items-center gap-2" onClick={()=>setPlusButtonClick(false)}>
-                          <Camera size={18} color="gray"/> Take a screenshot
+                      <button
+                        className=" w-full px-4 py-2 text-left text-sm hover:bg-gray-100  flex justify-start items-center gap-2"
+                        onClick={() => setPlusButtonClick(false)}
+                      >
+                        <Camera size={18} color="gray" /> Take a screenshot
                       </button>
-                      <button className=" w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex justify-start items-center gap-2" onClick={()=>setPlusButtonClick(false)}>
-                          <Github size={18} color="gray"/> Add from Github
+                      <button
+                        className=" w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex justify-start items-center gap-2"
+                        onClick={() => setPlusButtonClick(false)}
+                      >
+                        <Github size={18} color="gray" /> Add from Github
                       </button>
                     </div>
                   )}
