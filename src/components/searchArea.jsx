@@ -155,7 +155,7 @@ const ClaudeChat = ({
                 className="transition-transform duration-200 ease-in-out hover:scale-75"
                 // className="animate-scalePulse"
               />
-              <span className="text-6xl">Good morning</span>
+              <span className="text-5xl text-[#3D3D3A]">Hi, how are you?</span>
             </p>
           </div>
         ) : (
@@ -231,7 +231,7 @@ const ClaudeChat = ({
       {/* Input */}
       <div
         className={`fixed w-full bg-[#faf9f5] duration-300 ${
-          messages.length === 0 ? "bottom-60" : "bottom-0"
+          messages.length === 0 ? "top-80" : "bottom-0"
         }`}
       >
         <div className="w-full max-w-5xl mx-auto px-4 md:px-32 py-6">

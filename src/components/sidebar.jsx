@@ -54,6 +54,20 @@ const Sidebar = ({
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsOpen(false);
+      }
+    };
+  
+    // Call on mount to close sidebar if already on small screen
+    handleResize();
+  
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
     function handleClickOutside(event) {
       if (
         dropdownRef.current &&
