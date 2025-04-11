@@ -180,19 +180,20 @@ const ClaudeChat = ({
                 <div className="p-4">
                   {Array.isArray(msg.answer)
                     ? msg.answer.map((para, i) => (
-                        <>
+                      
                           <p
                             key={i}
                             className="text-gray-800 whitespace-pre-wrap mb-2"
                           >
                             {para}
                           </p>
-                        </>
+                      
                       ))
                     : // <p className="text-gray-500 italic">Thinking...</p>
                       null}
                   {/* feedback section */}
                   <div
+                  key={idx}
                     className={`flex justify-end items-center gap-2 w-full px-14 transition-opacity ${
                       idx === messages.length - 1
                         ? "opacity-100"
@@ -234,7 +235,7 @@ const ClaudeChat = ({
           messages.length === 0 ? "top-80" : "bottom-0"
         }`}
       >
-        <div className="w-full max-w-5xl mx-auto px-4 md:px-32 py-6">
+        <div className="w-full max-w-5xl mx-auto px-4 md:px-32 sm:px-32 py-6">
           <div className="flex flex-col border border-gray-200 rounded-2xl shadow-sm bg-white px-4 py-3 space-y-3">
             <textarea
               ref={textareaRef}

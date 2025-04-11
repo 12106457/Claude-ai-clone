@@ -29,7 +29,7 @@ const Header = ({ selectedkey }) => {
         }}
         ref={dropdownRef}
       >
-        <span className="font-normal">{selectedkey} </span>
+        <span className="font-normal truncate max-w-[350px] block whitespace-nowrap overflow-hidden">{selectedkey}</span>
         <ChevronDownIcon size={24} />
         {titleClicked && (
           <div className="absolute -bottom-28 right-0 mt-2 bg-white border rounded-lg shadow-lg w-32">
